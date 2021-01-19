@@ -12,14 +12,14 @@ public class Customer {
     @NotBlank
     private String name;
     @NotBlank
-    private String number;
+    private String phoneNumber;
 
     public Customer() {}
 
     public Customer(UUID id, String name, String number) {
         this.id = id;
         this.name = name;
-        this.number = number;
+        this.phoneNumber = number;
     }
 
     public UUID getId() {
@@ -38,11 +38,11 @@ public class Customer {
         this.name = name;
     }
 
-    public String getNumber() {
-        return number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setPhoneNumber(String number) {
+        this.phoneNumber = number;
     }
 }
