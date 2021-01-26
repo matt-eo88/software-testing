@@ -3,6 +3,7 @@ package com.amigoscode.testing.customer;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class CustomerRegistrationService {
@@ -23,6 +24,10 @@ public class CustomerRegistrationService {
                 return;
             }
             throw new IllegalStateException("The phone number is already taken");
+        }
+
+        if (request.getCustomer().getId() == null) {
+            request.getCustomer().setId(UUID.randomUUID());
         }
         customerRepository.save(toRegister);
     }
